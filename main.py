@@ -1,5 +1,7 @@
 from fastapi import FastAPI
-
+from typing import List, Optional
+from enum import IntEnum
+from pydantic import BaseModel, Field
 api = FastAPI()
 
 all_todos = [
@@ -67,3 +69,6 @@ def delete_todo(todo_id: int):
             deleted_todo = all_todos.pop(index)
             return {'message': 'Todo deleted', 'todo': deleted_todo}
     return {'message': 'Todo not found'}
+
+
+#Writing good code
